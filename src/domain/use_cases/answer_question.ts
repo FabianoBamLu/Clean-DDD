@@ -25,7 +25,13 @@ export class AnswerQuestionUseCase
         } : AnswerQuestionUseCaseRequest
         )
     {
-        let answer = new Answer( content );
+        let answer = new Answer(
+            {
+                authorId : instructorId,
+                content,
+                questionId
+            }
+            );
 
         return answer;
     }
