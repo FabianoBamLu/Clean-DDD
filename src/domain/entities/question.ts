@@ -1,10 +1,11 @@
 // -- IMPORTS
 
+import { Entity } from '../../core/entities/entity';
 import { Slug } from './value_objects/slug';
 
 // -- INTERFACES
 
-interface QuestionProps
+interface QuestionPropMap
 {
     authorId : string;
     content : string;
@@ -14,29 +15,7 @@ interface QuestionProps
 
 // -- TYPES
 
-export class Question
+export class Question extends Entity< QuestionPropMap >
 {
-    // -- PROPERTIES
-    
-    public authorId : string;
-    public content : string;
-    public id : string;
-    public slug : Slug;
-    public title : string;
-
-    // -- CONSTRUCTORS
-
-    constructor(
-        props : QuestionProps,
-        id ?: string
-    )
-    {
-        this.authorId = props.authorId;
-        this.content = props.content;
-        this.id = id ?? crypto.randomUUID();
-        this.title = props.title;
-        this.slug = props.slug;
-    }
-
     // -- OPERATIONS
 }

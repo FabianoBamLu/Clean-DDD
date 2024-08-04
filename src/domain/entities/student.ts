@@ -1,20 +1,17 @@
-export class Student
+// -- IMPORTS
+
+import { Entity } from '../../core/entities/entity';
+
+// -- INTERFACES
+
+interface StudentPropMap
 {
-    // -- PROPERTIES
+    name : string;
+}
 
-    public id : string;
-    public name : string;
+// -- TYPES
 
-    // -- CONSTRUCTORS
-
-    constructor(
-        name : string,
-        id ?: string
-        )
-    {
-        this.name = name;
-        this.id = id ?? crypto.randomUUID();
-    }
-
+export class Student extends Entity< StudentPropMap >
+{
     // -- OPERATIONS
 }

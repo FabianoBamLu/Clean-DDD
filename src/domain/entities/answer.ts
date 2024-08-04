@@ -1,6 +1,10 @@
+// -- IMPORTS
+
+import { Entity } from '../../core/entities/entity';
+
 // -- INTERFACES
 
-interface AnswerProps
+interface AnswerPropMap
 {
     authorId : string;
     content : string;
@@ -9,25 +13,13 @@ interface AnswerProps
 
 // -- TYPES
 
-export class Answer
+export class Answer extends Entity< AnswerPropMap >
 {
-    // -- PROPERTIES
+    // -- OPERATIONS
 
-    public id ?: string;
-    public content : string;
-    public authorId : string;
-    public questionId : string;
-
-    // -- CONSTRUCTORS
-
-    constructor(
-        props : AnswerProps,
-        id ?: string
+    content(
         )
     {
-        this.authorId = props.authorId;
-        this.content = props.content;
-        this.id = id ?? crypto.randomUUID();
-        this.questionId = props.questionId;
+        return this.propMap.content;
     }
 }

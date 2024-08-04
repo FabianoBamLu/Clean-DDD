@@ -1,20 +1,17 @@
-export class Instructor
+// -- IMPORTS
+
+import { Entity } from '../../core/entities/entity';
+
+// -- INTERFACES
+
+interface InstructorPropMap
 {
-    // -- PROPERTIES
-    
-    public id : string;
-    public name : string;
+    name : string;
+}
 
-    // -- CONSTRUCTORS
+// -- TYPES
 
-    constructor(
-        name : string,
-        id ?: string
-        )
-    {
-        this.name = name;
-        this.id = id ?? crypto.randomUUID();
-    }
-
+export class Instructor extends Entity< InstructorPropMap >
+{
     // -- OPERATIONS
 }
