@@ -4,6 +4,7 @@ interface QuestionProps
 {
     authorId : string;
     content : string;
+    slug : string;
     title : string;
 }
 
@@ -13,10 +14,11 @@ export class Question
 {
     // -- PROPERTIES
     
-    public id : string;
-    public title : string;
-    public content : string;
     public authorId : string;
+    public content : string;
+    public id : string;
+    public slug : string;
+    public title : string;
 
     // -- CONSTRUCTORS
 
@@ -29,6 +31,7 @@ export class Question
         this.content = props.content;
         this.id = id ?? crypto.randomUUID();
         this.title = props.title;
+        this.slug = props.slug;
     }
 
     // -- OPERATIONS
