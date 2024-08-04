@@ -1,9 +1,9 @@
 // -- IMPORTS
 
-import { AnswerRepository } from 'domain/repositories/answer_repository';
+import { AnswerRepository } from '../repositories/answer_repository';
 import { AnswerQuestionUseCase } from './answer_question';
 import { expect, test } from 'vitest';
-import { Answer } from '@entities/answer';
+import { Answer } from '../entities/answer';
 
 // -- VARIABLES
 
@@ -33,6 +33,6 @@ test(
             }
             );
 
-        expect( answer.content ).toEqual( 'This is the correct answer.' );
+        expect( answer.content() ).toEqual( 'This is the correct answer.' );
     }
     );

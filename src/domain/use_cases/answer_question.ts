@@ -1,7 +1,7 @@
 // -- IMPORTS
 
 import { Answer } from '../entities/answer';
-import { AnswerRepository } from 'domain/repositories/answer_repository';
+import { AnswerRepository } from '../repositories/answer_repository';
 
 // -- INTERFACES
 
