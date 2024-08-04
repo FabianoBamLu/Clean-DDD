@@ -1,6 +1,7 @@
 // -- IMPORTS
 
 import { Answer } from '../entities/answer';
+import { AnswerRepository } from 'domain/repositories/answer_repository';
 
 // -- INTERFACES
 
@@ -15,6 +16,14 @@ interface AnswerQuestionUseCaseRequest
 
 export class AnswerQuestionUseCase
 {
+    // -- CONSTRUCTORS
+
+    constructor(
+        private answerRepository: AnswerRepository
+        )
+    {
+    }
+
     // -- OPERATIONS
 
     async execute(
@@ -32,6 +41,8 @@ export class AnswerQuestionUseCase
                 questionId
             }
             );
+        
+        await this.answerRepository.create( answer );
 
         return answer;
     }
