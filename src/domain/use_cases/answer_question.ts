@@ -1,8 +1,10 @@
+// -- IMPORTS
+
+import { Answer } from '../entities/answer';
+
 // -- INTERFACES
 
-import { Answer } from '@entities/answer';
-
-interface AnswerQuestionUseCaseRequst
+interface AnswerQuestionUseCaseRequest
 {
     content : string;
     instructorId : string;
@@ -13,13 +15,6 @@ interface AnswerQuestionUseCaseRequst
 
 export class AnswerQuestionUseCase
 {
-    // -- CONSTRUCTORS
-
-    constructor(
-        )
-    {
-    }
-
     // -- OPERATIONS
 
     async execute(
@@ -27,7 +22,7 @@ export class AnswerQuestionUseCase
             content,
             instructorId,
             questionId
-        } : AnswerQuestionUseCaseRequst
+        } : AnswerQuestionUseCaseRequest
         )
     {
         let answer = new Answer( content );
